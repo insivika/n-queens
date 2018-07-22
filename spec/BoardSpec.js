@@ -53,8 +53,7 @@ describe('Board', function() {
       [1, 0, 0, 0],
       [0, 0, 0, 1]
     ];
-    var board = new Board(matrix);
-    expect(board.hasMajorDiagonalConflictAt(board._getFirstRowColumnIndexForMajorDiagonalOn(0, 1))).to.be.equal(false);
+
   });
 
   describe('Board with major diagonal conflicts', function() {
