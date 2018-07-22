@@ -79,24 +79,25 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
-      // return !this.rows()[rowIndex].indexOf(1); // fixme
-      // console.log(this)
+
+      return this.get(rowIndex).indexOf(1); // fixme
+
     },
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
       // var conflict = false;
-      // this.rows().forEach(function(row){
-      //   if (this.hasRowConflictAt(row)) {
+
+      // for (var row in this.attributes){
+
+      //   if(this.hasRowConflictAt(row)){
       //     conflict = true;
       //   }
-      // });
+
+      // }
+
       return conflict;
     },
-
-
-
-
 
     // COLUMNS - run from top to bottom
     // --------------------------------------------------------------
@@ -160,7 +161,5 @@
     });
   };
 
-  var board = new Board({n: 4});
-  console.log(board);
 }());
 
