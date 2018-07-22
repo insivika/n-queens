@@ -3,14 +3,11 @@ describe('ChessboardView', function() {
 
   beforeEach(function() {
     view = new BoardView({model: new Board({n: 4})});
-    board = new Board({n: 4});
   });
 
   it('should exist', function() {
     expect(view).to.be.ok;
   });
 
-  it('should test is row conflicts exist ', function() {
-    board.toggle.
 });
 

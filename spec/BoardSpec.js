@@ -77,4 +77,14 @@ describe('Board', function() {
       [0, 0, 1, 0]
     ]);
   });
+
+  describe('Adding to empty board', function() {
+    it('should test is row conflicts exist ', function() {
+      var board = new Board({n: 4});
+      board.togglePiece(0, 1);
+      board.togglePiece(0, 2);
+      expect(board.hasAnyRowConflicts()).to.equal(true);
+    });
+  });
+
 });
