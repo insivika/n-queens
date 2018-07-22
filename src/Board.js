@@ -147,7 +147,7 @@
         colIndex = majorDiagonalColumnIndexAtFirstRow;
       } else {
       // if less than 0 we know rowIndex = Absulte Value(majorDiagonalColumnIndexAtFirstRow) and colIndex = 0
-        rowIndex = Math.abs(majorDiagonalColumnIndexAtFirstRow)
+        rowIndex = Math.abs(majorDiagonalColumnIndexAtFirstRow);
         colIndex = 0;
       }
       // Take coordinates and while is in bound
@@ -194,8 +194,8 @@
       var count = 0;
       var colIndex, rowIndex;
       if (minorDiagonalColumnIndexAtFirstRow > this.get('n') - 1) {
-        colIndex = minorDiagonalColumnIndexAtFirstRow - (this.get('n') - 1);
-        rowIndex = minorDiagonalColumnIndexAtFirstRow + (this.get('n') - 1);
+        colIndex = minorDiagonalColumnIndexAtFirstRow - (minorDiagonalColumnIndexAtFirstRow - (this.get('n') - 1));
+        rowIndex = minorDiagonalColumnIndexAtFirstRow - (this.get('n') - 1);
       } else {
         colIndex = minorDiagonalColumnIndexAtFirstRow;
         rowIndex = 0;
@@ -220,13 +220,13 @@
       }
     }
 
-    for(var colIndex = 0; colIndex < this.get('n'); colIndex++){
-      var diagonalFound = this.hasMinorDiagonalConflictAt(this._getFirstRowColumnIndexForMinorDiagonalOn(0, colIndex));
+    for(var colIndex = 1; colIndex < this.get('n'); colIndex++){
+      var diagonalFound = this.hasMinorDiagonalConflictAt(this._getFirstRowColumnIndexForMinorDiagonalOn(this.get('n') - 1, colIndex));
       if(diagonalFound === true){
         return true;
       }
     }
-      return false; // fixme
+    return false; // fixme
     }
 
     /*--------------------  End of Helper Functions  ---------------------*/
