@@ -46,6 +46,17 @@ describe('Board', function() {
     ]);
   });
 
+  describe('Major Diagonal separate', function() {
+    var matrix = [
+      [0, 1, 0, 0],
+      [0, 0, 0, 0],
+      [1, 0, 0, 0],
+      [0, 0, 0, 1]
+    ];
+    var board = new Board(matrix);
+    expect(board.hasMajorDiagonalConflictAt(board._getFirstRowColumnIndexForMajorDiagonalOn(0, 1))).to.be.equal(false);
+  });
+
   describe('Board with major diagonal conflicts', function() {
     verifyConflictTypes(['majorDiagonal', 'queens'], [
       [0, 1, 0, 0],
@@ -78,13 +89,13 @@ describe('Board', function() {
     ]);
   });
 
-  describe('Adding to empty board', function() {
-    it('should test is row conflicts exist ', function() {
-      var board = new Board({n: 4});
-      board.togglePiece(0, 1);
-      board.togglePiece(0, 2);
-      expect(board.hasAnyRowConflicts()).to.equal(true);
-    });
-  });
+  // describe('Adding to empty board', function() {
+  //   it('should test is row conflicts exist ', function() {
+  //     var board = new Board({n: 4});
+  //     board.togglePiece(0, 1);
+  //     board.togglePiece(0, 2);
+  //     expect(board.hasAnyRowConflicts()).to.equal(true);
+  //   });
+  // });
 
 });
