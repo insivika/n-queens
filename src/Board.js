@@ -85,13 +85,13 @@
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
-      var conflict = false;
-      this.rows().forEach(function(row){
-        if (this.hasRowConflictAt(row)) {
-          conflict = true;
-        }
-      });
-      return conflict;
+      // var conflict = false;
+      // this.rows().forEach(function(row){
+      //   if (this.hasRowConflictAt(row)) {
+      //     conflict = true;
+      //   }
+      // });
+      // return conflict;
     },
 
 
