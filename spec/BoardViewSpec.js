@@ -3,6 +3,7 @@ describe('ChessboardView', function() {
 
   beforeEach(function() {
     view = new BoardView({model: new Board({n: 4})});
+    board = new Board({n: 4});
   });
 
   it('should exist', function() {
@@ -10,4 +11,3 @@ describe('ChessboardView', function() {
   });
 
 });
-
