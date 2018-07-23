@@ -12,11 +12,12 @@
 
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n rooks placed such that none of them can attack each other
 
-window.findNRooksSolution = function(n, rowPos, colPos) {
+window.findNRooksSolution = function(n, rowPos, colPos, first) {
   // Create empty matrix (makeEmptyMatrix(n))
   var rookBoard = new Board({ n: n });
   rowPos = rowPos || 0;
   colPos = colPos || 0;
+  first = first || true;
   // iterate through each row in empty matrix (forEach: row, index)
   rookBoard.togglePiece(rowPos, colPos);
   rookBoard.rows().forEach(function(row, rowIndex) {
