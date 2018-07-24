@@ -48,11 +48,18 @@ window.findNRooksSolution = function(n, rowPos, colPos, first) {
 // return the number of nxn chessboards that exist, with n rooks placed such that none of them can attack each other
 window.countNRooksSolutions = function(n) {
   // create solution object;
-  var solutionList = {};
+  var solutionList = {}; var solution, solutionTranspose, solutionFlip;
   // create for loop that increases rowPos by 1 and
   for (var rowPos = 0; rowPos < n; rowPos++) {
     for (var colPos = 0; colPos < n; colPos++) {
-      solutionList[window.findNRooksSolution(n, rowPos, colPos)] = window.findNRooksSolution(n, rowPos, colPos);
+      solution = window.findNRooksSolution(n, rowPos, colPos);
+      solutionFlip = solution.map(function(row) {
+        return row.reverse();
+      });
+      //solutionTranspose = solution[0].map((col, i) => solution.map(row => row[i]));
+      solutionList[solution] = solution;
+      //solutionList[solutionTranspose] = solutionTranspose;
+      solutionList[solutionFlip] = solutionFlip;
     }
   }
   // create for loop that increases rowPos by 1 and
