@@ -28,13 +28,11 @@ window.findNRooksSolution = function(n, board) {
     if (n === 0) {
       return;
     }
-
     // Base case
     if (row === n) {
       count++;
-      return board.rows();
+      return true;
     }
-
     for (var col = 0; col < n; col++) {
       board.togglePiece(row, col);
       if (!(board.hasRowConflictAt(row) || board.hasColConflictAt(col))) {
@@ -46,6 +44,7 @@ window.findNRooksSolution = function(n, board) {
       }
       board.togglePiece(row, col);
     }
+    return false;
     // may have to return here;
   };
   checkSolutions();
